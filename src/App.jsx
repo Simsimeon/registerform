@@ -6,6 +6,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./page/Home";
 import { ProfileProvider } from "./context/ProfileProvider";
 import ProfileCard from "./page/ProfileCard";
+import ImageUrl from "./component/ImageUrl";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/ProfileCard" element={<ProfileCard />} />
+          {/* <Route path="/ImageUrl" element={<ImageUrl />} /> */}
         </Routes>
       </BrowserRouter>
     </ProfileProvider>

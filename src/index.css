@@ -24,7 +24,8 @@ body {
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.wrapper h2 {
+.wrapper h2,
+h3 {
   font-size: 36px;
   text-align: center;
 }
@@ -99,4 +100,11 @@ body {
 }
 .profile-card h2 {
   color: black;
+}
+h3 {
+  font-size: 12px;
+  margin-bottom: ;
+}
+.error-message {
+  font-size: 13px;
 }

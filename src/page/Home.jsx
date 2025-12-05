@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import { useProfile } from "../context/ProfileProvider";
 import { useNavigate } from "react-router-dom";
+import ImageUrl from "../component/ImageUrl";
 
 const Home = () => {
   const navigate = useNavigate();
-  const { name, setName, email, setEmail, validateEmail, error, setError } =
-    useProfile();
+  const {
+    name,
+    setName,
+    email,
+    setEmail,
+    validateEmail,
+    error,
+    setError,
+    upLoadedURL,
+  } = useProfile();
 
   return (
     <div className="wrapper">
       <form>
         <h2>Register Now</h2>
+        <ImageUrl />
         <div className="input-box">
           <input
             type="text"
@@ -45,7 +55,8 @@ const Home = () => {
           onClick={(e) => {
             e.preventDefault();
 
-            if (!name || !email) return setError("Crediential misses");
+            if (!name || !email || !upLoadedURL)
+              return setError("Crediential misses");
             if (!validateEmail(email)) return setError("Invalid Email");
 
             if (validateEmail) navigate("ProfileCard");
